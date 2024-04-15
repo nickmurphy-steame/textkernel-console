@@ -93,12 +93,13 @@ async function getMissingSkills(
 }
 
 export async function getSkills(professionId: number) {
-  // const suggestedSkills = await getSuggestedSkills(professionId);
-  // const missingSkills = await getMissingSkills(professionId, suggestedSkills);
-  // return [...suggestedSkills, ...missingSkills];
-  return [
-    { name: "X-Ray", id: "2978", score: 0.97 },
-    { name: "MRI", id: "1138", score: 0.88 },
-    { name: "Vital Signs", id: "5547", score: 0.76 },
-  ];
+  if (!process.env.LIVE == true)
+    return [
+      { name: "X-Ray", id: "2978", score: 0.97 },
+      { name: "MRI", id: "1138", score: 0.88 },
+      { name: "Vital Signs", id: "5547", score: 0.76 },
+    ];
+  const suggestedSkills = await getSuggestedSkills(professionId);
+  const missingSkills = await getMissingSkills(professionId, suggestedSkills);
+  return [...suggestedSkills, ...missingSkills];
 }
