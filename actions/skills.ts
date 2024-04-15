@@ -2,7 +2,6 @@
 
 export async function getSkills(professionId: number) {
   // get skills from professionId
-  //   return skills
+  //   compare skills from professionId
+  //   return total skills
 }
-
-export async function getMoreSkills(professionId: number, skills: string[]) {}
