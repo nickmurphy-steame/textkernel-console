@@ -19,7 +19,6 @@ export function Search({
   const handleSubmit = () => {
     setSearchValue(input);
     onSearch(input);
-    // search for input
   };
 
   return (
@@ -51,17 +50,19 @@ export function Search({
             <li className="p-2 font-medium">No results found.</li>
           )}
           {results.map((profession) => (
-            <li
+            <Link
               key={profession.id}
-              className="p-2 hover:cursor-pointer hover:bg-muted"
+              href={`/?professionId=${profession.id}`}
+              className="font-medium"
             >
-              <Link href={`/${profession.id}`} className="font-medium">
+              <li className="p-2 hover:cursor-pointer hover:bg-muted">
                 {profession.name}
-              </Link>
-              <p className="text-sm text-muted-foreground">
-                CodeID: {profession.id}
-              </p>
-            </li>
+
+                <p className="text-sm text-muted-foreground">
+                  CodeID: {profession.id}
+                </p>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
