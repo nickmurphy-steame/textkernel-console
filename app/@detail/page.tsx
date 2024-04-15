@@ -15,7 +15,7 @@ export default async function DetailPage({
 
   return (
     <div>
-      <h1>Skills for profession</h1>
+      <h2 className="text-lg font-semibold">Skills for profession</h2>
       <ul className="flex flex-col divide-y border rounded">
         {skills.map((skill) => (
           <li

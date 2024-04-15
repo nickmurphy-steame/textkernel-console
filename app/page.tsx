@@ -7,12 +7,15 @@ import { useState } from "react";
 export default function Home() {
   const [results, setResults] = useState<Profession[]>([]);
   return (
-    <Search
-      results={results}
-      onSearch={async (input) => {
-        const fetched = await getProfessions(input);
-        setResults(fetched);
-      }}
-    />
+    <>
+      <h2 className="text-lg font-semibold">Occupations</h2>
+      <Search
+        results={results}
+        onSearch={async (input) => {
+          const fetched = await getProfessions(input);
+          setResults(fetched);
+        }}
+      />
+    </>
   );
 }
