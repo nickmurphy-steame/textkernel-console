@@ -8,7 +8,7 @@ export default function Home() {
   const [results, setResults] = useState<Profession[]>([]);
   return (
     <>
-      <h2 className="text-lg font-semibold">Occupations</h2>
+      <h2 className="text-lg font-semibold">Professions</h2>
       <Search
         results={results}
         onSearch={async (input) => {
