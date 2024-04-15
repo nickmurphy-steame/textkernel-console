@@ -50,8 +50,8 @@ async function getSuggestedSkills(professionId: number) {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
-        "Tx-AccountId": process.env.NEXT_PUBLIC_TX_ACCOUNT_ID || "",
-        "Tx-ServiceKey": process.env.NEXT_PUBLIC_TX_SERVICE_KEY || "",
+        "Tx-AccountId": process.env.TX_ACCOUNT_ID || "",
+        "Tx-ServiceKey": process.env.TX_SERVICE_KEY || "",
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -76,8 +76,8 @@ async function getMissingSkills(
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
-        "Tx-AccountId": process.env.NEXT_PUBLIC_TX_ACCOUNT_ID || "",
-        "Tx-ServiceKey": process.env.NEXT_PUBLIC_TX_SERVICE_KEY || "",
+        "Tx-AccountId": process.env.TX_ACCOUNT_ID || "",
+        "Tx-ServiceKey": process.env.TX_SERVICE_KEY || "",
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
