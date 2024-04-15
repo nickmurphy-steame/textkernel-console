@@ -16,7 +16,10 @@ export default async function DetailPage({
 
   return (
     <div className="flex flex-col gap-y-2">
-      <h2 className="text-lg font-semibold text-center">Skills</h2>
+      <h2 className="text-lg font-medium">
+        Skills for Profession ID:{" "}
+        <span className="font-semibold">{professionId}</span>
+      </h2>
       <DownloadSkillsButton skills={skills} />
       <ul className="flex flex-col divide-y border rounded">
         {skills.map((skill) => (
@@ -25,6 +28,7 @@ export default async function DetailPage({
             <p className="text-sm text-muted-foreground">
               Score: {skill.score}
             </p>
+            <p className="text-sm text-muted-foreground">SkillID: {skill.id}</p>
           </li>
         ))}
       </ul>
