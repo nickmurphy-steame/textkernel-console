@@ -16,7 +16,7 @@ const responseToProfession = z
   );
 
 export async function getProfessions(prefix: string) {
-  if (!process.env.LIVE == true)
+  if (!process.env.NEXT_PUBLIC_LIVE == true)
     return [
       { name: "Radiological Lab Technician", id: 2978 },
       { name: "Radiologist", id: 1138 },
