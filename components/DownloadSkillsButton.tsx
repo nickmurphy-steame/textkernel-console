@@ -6,12 +6,18 @@ import { Skill } from "@/types/app";
 import { Button } from "./ui/button";
 import { jsonToCsv } from "@/lib/utils";
 
-export function DownloadSkillsButton({ skills }: { skills: Skill[] }) {
+export function DownloadSkillsButton({
+  skills,
+  professionId,
+}: {
+  skills: Skill[];
+  professionId: number;
+}) {
   const handleClick = () => {
     const asCSV = jsonToCsv(skills);
     var blob = new Blob([asCSV], { type: "text/csv;charset=utf-8" });
     try {
-      FileSaver.saveAs(blob, "file.csv");
+      FileSaver.saveAs(blob, `skills-for-profession-id-${professionId}.csv`);
       toast.success("Skills downloaded as CSV");
     } catch {
       toast.error("Failed to download skills as CSV");

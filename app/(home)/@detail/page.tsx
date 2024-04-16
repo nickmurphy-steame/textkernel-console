@@ -20,7 +20,7 @@ export default async function DetailPage({
         Skills for Profession ID:{" "}
         <span className="font-semibold">{professionId}</span>
       </h2>
-      <DownloadSkillsButton skills={skills} />
+      <DownloadSkillsButton professionId={professionId} skills={skills} />
       <ul className="flex flex-col divide-y border rounded">
         {skills.map((skill) => (
           <li key={skill.id} className="p-2">
