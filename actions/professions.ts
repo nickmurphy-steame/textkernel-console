@@ -1,3 +1,5 @@
+"use server";
+
 import { tx } from "@/lib/api";
 import { z } from "zod";
 
@@ -17,7 +19,7 @@ const responseToProfession = z
   );
 
 export async function getProfessions(prefix: string) {
-  if (!process.env.NEXT_PUBLIC_LIVE == true)
+  if (process.env.LIVE !== "true")
     return [
       { name: "Radiological Lab Technician", id: 2978 },
       { name: "Radiologist", id: 1138 },
@@ -32,6 +34,7 @@ export async function getProfessions(prefix: string) {
       Limit: 10,
     }),
   });
+
   const results = await response.json();
   const professions = responseToProfession.parse(results);
   return professions;

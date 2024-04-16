@@ -76,7 +76,7 @@ async function getMissingSkills(
 }
 
 export async function getSkills(professionId: number) {
-  if (!process.env.NEXT_PUBLIC_LIVE == true)
+  if (process.env.LIVE !== "true")
     return [
       { name: "X-Ray", id: "2978", score: 0.97 },
       { name: "MRI", id: "1138", score: 0.88 },
